@@ -9,7 +9,7 @@ def generate_input(n):
     
     return fuzzer.generate()
 
-if _name__ == "__main__":
+if __name__ == "__main__":
     # usage
 	"""
     if len(sys.argv) != 3:
@@ -31,10 +31,11 @@ if _name__ == "__main__":
 	
 		s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		#s.settimeout(2) #runs code every 2 seconds, i think
-		s.connect((target,9999)) #hard code server IP address
+		s.connect(('10.0.2.4',9999)) #hard code server IP address
 		s.recv(9999)
 
 		input = generate_input(max_length) # generate input string of max length specified at cmdline
+		print (input)
 		s.send(input)
 		return_value = s.recv() # run name with our input
         
