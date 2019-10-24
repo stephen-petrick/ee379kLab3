@@ -1,4 +1,4 @@
-import sys, socket, ipaddress
+import sys, socket #, ipaddress
 from fuzzbang.alphanumericfuzzer import AlphaNumericFuzzer
 
 def generate_input(n):
@@ -23,7 +23,7 @@ if __name__ == "__main__":
 	instruction = sys.argv[3] #particular instruciton of server we're fuzzing
        
 	results = [] # list for storing the result of each test
-	target = ipaddress.ip_address('10.0.2.4')
+	#target = ipaddress.ip_address('10.0.2.4')
     
     # main loop
 	for i in range(num_cases):
@@ -36,7 +36,8 @@ if __name__ == "__main__":
 
 		input = generate_input(max_length) # generate input string of max length specified at cmdline
 		print (input)
-		s.send(input)
+		#s.send(input)
+		s.send('bleh')
 		return_value = s.recv() # run name with our input
         
 		# save test results to our global results list
