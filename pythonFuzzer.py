@@ -1,5 +1,7 @@
 import sys, socket #, ipaddress
 from fuzzbang.alphanumericfuzzer import AlphaNumericFuzzer
+#Credit to https://jmcph4.github.io/2018/01/19/writing-a-simple-fuzzer-in-python/
+#for fuzzing module
 
 def generate_input(n):
     """
